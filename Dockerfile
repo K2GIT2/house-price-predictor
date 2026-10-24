@@ -3,6 +3,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # 1. 依存関係のファイルだけを先にコピーしてインストール（キャッシュを効かせる）
+# Geminiの提案
 COPY src/api/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
