@@ -81,7 +81,31 @@ def process_data(input_file, output_file):
 
 if __name__ == "__main__":
     # Example usage
+    import argparse
+
+    # 1. パーサー（引数解析器）を作成する
+    parser = argparse.ArgumentParser(description="データの処理スクリプト")
+
+    # 2. 受け取りたい引数を定義する
+    parser.add_argument("--input", type=str, required=True, help="入力ファイルのパス")
+    parser.add_argument("--output", type=str, required=True, help="出力ファイルのパス")
+
+    # 3. コマンドライン引数を解析して取得する
+    args = parser.parse_args()
+
+    # 4. 取得した値を変数として使う
+    input_path = args.input
+    output_path = args.output
+
+    print(f"入力ファイル: {input_path}")
+    print(f"出力ファイル: {output_path}")
+
     process_data(
-        input_file="data/raw/house_data.csv", 
-        output_file="data/processed/cleaned_house_data.csv"
+        input_file = input_path,
+        output_file = output_path 
     )
+
+    # process_data(
+    #     input_file="data/raw/house_data.csv", 
+    #     output_file="data/processed/cleaned_house_data.csv"
+    # )
