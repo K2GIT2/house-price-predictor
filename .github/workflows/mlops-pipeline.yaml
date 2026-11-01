@@ -25,7 +25,7 @@ on:
     tags: [ 'v*.*.*' ]
 
 jobs:
-  data_processing:
+  data-processing:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -67,6 +67,7 @@ jobs:
           path: models/trained/preprocessor.pkl
 
   model-training:
+    needs: data-processing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
