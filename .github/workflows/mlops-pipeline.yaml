@@ -66,7 +66,7 @@ jobs:
           name: processor
           path: models/trained/preprocessor.pkl
 
-  model_traiing:
+  model_training:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
