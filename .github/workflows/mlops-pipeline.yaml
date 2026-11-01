@@ -22,7 +22,7 @@ on:
   release:
     types: [created]
     branches: [ main ]
-    tagis: [ 'v*.*.*' ]
+    tags: [ 'v*.*.*' ]
 
 jobs:
   data_processing:
@@ -66,7 +66,7 @@ jobs:
           name: processor
           path: models/trained/preprocessor.pkl
 
-  model_training:
+  model-training:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -99,7 +99,7 @@ jobs:
       - name: Wait for MLflow to stgart
         run: |
           for i in {1..10}; do
-            curl -f http://localhost:5000/health || step 5;
+            curl -f http://localhost:5000/health || sleep 5;
           done
 
       - name: Train the model
@@ -155,6 +155,6 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: k2doc/fastapi:${{ github.sha}}
+          tags: user/fastapi:${{ github.sha}}
           context: .
           file: "Dockerfile"
