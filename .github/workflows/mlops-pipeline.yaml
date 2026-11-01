@@ -156,6 +156,6 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: user/fastapi:${{ github.sha}}
+          tags: k2doc/fastapi:${{ github.sha}}
           context: .
           file: "Dockerfile"
