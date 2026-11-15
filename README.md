@@ -57,7 +57,7 @@ To begin, ensure the following tools are installed on your system:
 
    ```bash
    uv venv --python python3.11
-   source .venv/bin/activate
+   source .venv/bin/activate # linuxコマンドのためGitbashで実行すること。
    ```
 
 4. **Install dependencies:**
