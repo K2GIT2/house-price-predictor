@@ -74,9 +74,11 @@ To track experiments and model runs:
 
 ```bash
 cd deployment/mlflow
-docker compose -f mlflow-docker-compose.yml up -d
+docker compose -f mlflow-docker-compose.yaml up -d
 docker compose ps
 ```
+
+mlflow-docker-compose.yamlは大元のgitリポジトリに付属。
 
 > 🐧 **Using Podman?** Use this instead:
 
